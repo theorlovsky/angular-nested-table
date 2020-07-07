@@ -7,9 +7,16 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint:fix": "ng lint --fix",
+    "e2e": "ng e2e",
+    "format": "prettier --write"
   },
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:fix && pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "@angular/animations": "~10.0.2",
     "@angular/common": "~10.0.2",
@@ -19,6 +26,7 @@
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
+    "faker": "^4.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -27,10 +35,12 @@
     "@angular-devkit/build-angular": "~0.1000.1",
     "@angular/cli": "~10.0.1",
     "@angular/compiler-cli": "~10.0.2",
-    "@types/node": "^12.11.1",
+    "@types/faker": "^4.1.12",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0-next.1",
+    "husky": "^4.2.5",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -38,9 +48,13 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-angular": "^3.0.2",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.9.5"
   }
 }
