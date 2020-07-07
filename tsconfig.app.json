@@ -5,7 +5,8 @@
     "outDir": "./out-tsc/app",
     "types": [],
     "paths": {
-      "@app/mock-data": ["./src/app/mock-data/index.ts"]
+      "@app/mock-data": ["./src/app/mock-data/index.ts"],
+      "@app/table": ["./src/app/table/index.ts"]
     }
   },
   "angularCompilerOptions": {

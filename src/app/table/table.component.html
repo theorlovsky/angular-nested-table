@@ -1,0 +1,28 @@
+<mat-table [dataSource]="tableData$" [trackBy]="trackBy">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{ item[groupBy[0]] }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="leads">
+    <mat-header-cell *matHeaderCellDef>Leads</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{ item.leads || '-' }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="revenue">
+    <mat-header-cell *matHeaderCellDef>Revenue</mat-header-cell>
+    <mat-cell *matCellDef="let item">
+      {{ item.revenue ? (item.revenue | currency) : '-' }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="rpl">
+    <mat-header-cell *matHeaderCellDef>RPL</mat-header-cell>
+    <mat-cell *matCellDef="let item">
+      {{ item.rpl ? (item.rpl | currency) : '-' }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columns"></mat-row>
+</mat-table>
