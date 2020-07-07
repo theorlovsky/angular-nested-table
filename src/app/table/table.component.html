@@ -11,16 +11,12 @@
 
   <ng-container matColumnDef="revenue">
     <mat-header-cell *matHeaderCellDef>Revenue</mat-header-cell>
-    <mat-cell *matCellDef="let item">
-      {{ item.revenue ? (item.revenue | currency) : '-' }}
-    </mat-cell>
+    <mat-cell *matCellDef="let item">{{ item.revenue ? (item.revenue | currency) : '-' }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="rpl">
     <mat-header-cell *matHeaderCellDef>RPL</mat-header-cell>
-    <mat-cell *matCellDef="let item">
-      {{ item.rpl ? (item.rpl | currency) : '-' }}
-    </mat-cell>
+    <mat-cell *matCellDef="let item">{{ item.rpl ? (item.rpl | currency) : '-' }}</mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
